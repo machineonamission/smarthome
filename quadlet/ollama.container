@@ -1,0 +1,22 @@
+[Unit]
+Description=Ollama Brain
+
+[Container]
+Pod=smarthome.pod
+ContainerName=ollama
+Image=ollama_fork.build
+Pull=missing
+Volume=ollama-data.volume:/root/.ollama:Z
+AddDevice=nvidia.com/gpu=all
+Environment=OLLAMA_DEBUG=2
+Environment=OLLAMA_FLASH_ATTENTION=1
+Environment=OLLAMA_KV_CACHE_TYPE=q4_0
+Environment=OLLAMA_CONTEXT_LENGTH=8000
+Environment=OLLAMA_VULKAN=1
+Environment=OLLAMA_MAX_VRAM=2400000000
+
+[Service]
+Restart=always
+ExecStartPost=/bin/sleep 5
+ExecStartPost=-/usr/bin/podman exec ollama ollama pull qwen3:4b-instruct
+ExecStartPost=-/usr/bin/podman exec ollama ollama pull qwen3:1.7b

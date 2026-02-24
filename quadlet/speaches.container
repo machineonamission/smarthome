@@ -1,0 +1,29 @@
+[Unit]
+Description=Speaches AI Services
+
+[Container]
+Pod=smarthome.pod
+ContainerName=speaches
+Image=ghcr.io/speaches-ai/speaches:0.9.0-rc.3-cuda
+Environment=enable_ui=False
+Environment=log_level=debug
+Environment=WHISPER__MODEL=Systran/faster-distil-whisper-small.en
+Environment=WHISPER__compute_type=int8_float32
+Environment=SPEACHES_BASE_URL=http://localhost:8000
+Environment=stt_model_ttl=-1
+Environment=tts_model_ttl=-1
+Environment=vad_model_ttl=-1
+Environment=preload_models=["speaches-ai/Kokoro-82M-v1.0-ONNX-fp16", "Systran/faster-distil-whisper-small.en"]
+Volume=huggingface-hub.volume:/home/ubuntu/.cache/huggingface/hub
+AddDevice=nvidia.com/gpu=all
+
+# Native Healthchecks
+HealthCmd=curl -f http://localhost:8000/health || exit 1
+HealthInterval=30s
+HealthTimeout=10s
+HealthRetries=3
+HealthStartPeriod=40s
+Notify=healthy
+
+[Service]
+Restart=always

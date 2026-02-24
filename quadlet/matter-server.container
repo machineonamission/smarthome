@@ -1,0 +1,14 @@
+[Unit]
+Description=Matter Server Python
+
+[Container]
+Pod=smarthome.pod
+ContainerName=matter-server
+Exec=--storage-path /data --paa-root-cert-dir /data/credentials --bluetooth-adapter 0
+Image=ghcr.io/matter-js/python-matter-server:stable
+AppArmor=unconfined
+Volume=matter-server-data.volume:/data:z
+Volume=/run/dbus:/run/dbus:ro
+
+[Service]
+Restart=always

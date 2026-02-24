@@ -1,0 +1,16 @@
+[Unit]
+Description=Home Assistant Core
+After=ollama.container speaches.container wyoming-openai.container linux-voice-assistant.container matter-server.container
+Requires=ollama.container speaches.container wyoming-openai.container linux-voice-assistant.container matter-server.container
+
+[Container]
+Pod=smarthome.pod
+ContainerName=homeassistant
+Timezone=America/Chicago
+Image=ghcr.io/home-assistant/home-assistant:stable
+PodmanArgs=--privileged
+Volume=haconfig.volume:/config
+Volume=/run/dbus:/run/dbus:ro
+
+[Service]
+Restart=always

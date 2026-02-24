@@ -1,0 +1,24 @@
+[Unit]
+Description=Wyoming OpenAI Bridge
+After=speaches.container
+Requires=speaches.container
+
+[Container]
+Pod=smarthome.pod
+ContainerName=wyoming_openai
+Image=ghcr.io/roryeckel/wyoming_openai:latest
+Environment=WYOMING_URI=tcp://0.0.0.0:10300
+Environment=WYOMING_LOG_LEVEL=DEBUG
+Environment=WYOMING_LANGUAGES=en
+# Connecting via localhost because we are sharing the host network pod
+Environment=STT_OPENAI_URL=http://localhost:8000/v1
+Environment=STT_MODELS=Systran/faster-distil-whisper-small.en
+Environment=STT_STREAMING_MODELS=Systran/faster-distil-whisper-small.en
+Environment=STT_BACKEND=SPEACHES
+Environment=TTS_OPENAI_URL=http://localhost:8000/v1
+Environment=TTS_MODELS=speaches-ai/Kokoro-82M-v1.0-ONNX-fp16
+Environment=TTS_BACKEND=SPEACHES
+Environment=TTS_STREAMING_MODELS=speaches-ai/Kokoro-82M-v1.0-ONNX-fp16
+
+[Service]
+Restart=always

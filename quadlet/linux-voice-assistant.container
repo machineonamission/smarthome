@@ -1,0 +1,42 @@
+[Unit]
+Description=Linux Voice Assistant
+
+[Container]
+Pod=smarthome.pod
+ContainerName=linux-voice-assistant
+Image=ghcr.io/ohf-voice/linux-voice-assistant:latest
+User=1000:1000
+AddCapability=SYS_NICE
+SecurityLabelDisable=true
+GroupAdd=audio
+Volume=wakeword_data.volume:/app/local
+Volume=lva-configuration.volume:/app/configuration
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/timezone:/etc/timezone:ro
+Volume=/run/user/1000:/run/user/1000
+
+# Native Healthchecks
+HealthCmd=pgrep -f linux_voice_assistant || exit 1
+HealthInterval=30s
+HealthTimeout=5s
+HealthRetries=3
+HealthStartPeriod=90s
+
+
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=PULSE_SERVER=unix:/run/user/1000/pulse/native
+# --- .env file ---
+Environment=ENABLE_DEBUG=1
+Environment=LVA_USER_ID=1000
+Environment=LVA_USER_GROUP=1000
+Environment=CLIENT_NAME=linux_voice_assistant
+Environment=LVA_PULSE_SERVER=unix:/run/user/1000/pulse/native
+Environment=LVA_XDG_RUNTIME_DIR=/run/user/1000
+Environment=ENABLE_THINKING_SOUND=1
+Environment=WAKE_MODEL=okay_nabu
+Environment=STOP_MODEL=stop
+# --------------------------------------------------
+
+[Service]
+Restart=always
+ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
