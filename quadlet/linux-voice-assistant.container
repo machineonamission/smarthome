@@ -9,8 +9,9 @@ User=1000:1000
 AddCapability=SYS_NICE
 SecurityLabelDisable=true
 GroupAdd=audio
-Volume=wakeword_data.volume:/app/local
-Volume=lva-configuration.volume:/app/configuration
+# the :U flag makes the stupid post-start one-shot container redundant. podman my beloved
+Volume=wakeword_data.volume:/app/local:U
+Volume=lva-configuration.volume:/app/configuration:U
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/etc/timezone:/etc/timezone:ro
 Volume=/run/user/1000:/run/user/1000
@@ -39,4 +40,4 @@ Environment=STOP_MODEL=stop
 
 [Service]
 Restart=always
-ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
+#ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
