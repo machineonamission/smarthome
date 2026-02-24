@@ -13,7 +13,7 @@ Environment=SPEACHES_BASE_URL=http://localhost:8000
 Environment=stt_model_ttl=-1
 Environment=tts_model_ttl=-1
 Environment=vad_model_ttl=-1
-Environment=preload_models=["speaches-ai/Kokoro-82M-v1.0-ONNX-fp16", "Systran/faster-distil-whisper-small.en"]
+Environment=preload_models='["speaches-ai/Kokoro-82M-v1.0-ONNX-fp16", "Systran/faster-distil-whisper-small.en"]'
 Volume=huggingface-hub.volume:/home/ubuntu/.cache/huggingface/hub
 AddDevice=nvidia.com/gpu=all
 
