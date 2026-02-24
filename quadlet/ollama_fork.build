@@ -1,4 +1,4 @@
 [Build]
 ImageTag=localhost/ollama_fork
-File=https://github.com/machineonamission/ollama.git
-SetWorkingDirectory=unit
+SetWorkingDirectory=https://github.com/machineonamission/ollama.git
+Pull=missing
