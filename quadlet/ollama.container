@@ -14,9 +14,15 @@ Environment=OLLAMA_KV_CACHE_TYPE=q4_0
 Environment=OLLAMA_CONTEXT_LENGTH=8000
 Environment=OLLAMA_VULKAN=1
 Environment=OLLAMA_MAX_VRAM=2400000000
+Environment=OLLAMA_KEEP_ALIVE=-1
+
+HealthCmd=out=$(curl -s http://localhost:11434/); echo "$out"; echo "$out" | grep -q "Ollama is running" || exit 1
+HealthInterval=10s
+HealthTimeout=10s
+HealthRetries=10
+Notify=healthy
 
 [Service]
 Restart=always
-ExecStartPost=/bin/sleep 5
 ExecStartPost=-/usr/bin/podman exec ollama ollama pull qwen3:4b-instruct
-ExecStartPost=-/usr/bin/podman exec ollama ollama pull qwen3:1.7b
+ExecStartPost=-/usr/bin/podman exec ollama curl -s -X POST http://localhost:11434/api/generate -d '{"model":"qwen3:4b-instruct","keep_alive":-1}'
