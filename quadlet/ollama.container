@@ -24,5 +24,5 @@ Notify=healthy
 
 [Service]
 Restart=always
-ExecStartPost=-/usr/bin/podman exec ollama ollama pull qwen3:4b-instruct
-ExecStartPost=-/usr/bin/podman exec ollama curl -s -X POST http://localhost:11434/api/generate -d '{"model":"qwen3:4b-instruct","keep_alive":-1}'
+ExecStartPost=-/usr/sbin/curl http://localhost:11434/api/pull -d '{"model": "qwen3:4b-instruct"}'
+ExecStartPost=-/usr/sbin/curl -s -X POST http://localhost:11434/api/generate -d '{"model":"qwen3:4b-instruct","keep_alive":-1}'
