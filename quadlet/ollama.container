@@ -1,10 +1,12 @@
 [Unit]
 Description=Ollama Brain
+Wants=ollama_fork-build.service
+After=ollama_fork-build.service
 
 [Container]
 Pod=smarthome.pod
 ContainerName=ollama
-Image=ollama_fork.build
+Image=localhost/ollama_fork:latest
 Pull=missing
 Volume=ollama-data.volume:/root/.ollama:Z
 AddDevice=nvidia.com/gpu=all

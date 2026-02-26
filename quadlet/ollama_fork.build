@@ -8,3 +8,8 @@ PodmanArgs=--cpu-quota=800000
 # 8g, unlimited swap
 PodmanArgs=--memory=8g
 PodmanArgs=--memory-swap=-1
+
+[Service]
+# Only proceed with this build if the image is missing.
+# If it exists, the shell exits with 1, which tells systemd to gracefully skip the build command.
+ExecCondition=/bin/sh -c '/usr/bin/podman image exists localhost/ollama_fork && exit 1 || exit 0'
