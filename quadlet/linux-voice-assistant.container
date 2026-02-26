@@ -21,7 +21,7 @@ HealthCmd=pgrep -f linux_voice_assistant || exit 1
 HealthInterval=30s
 HealthTimeout=5s
 HealthRetries=3
-HealthStartPeriod=90s
+HealthStartupRetries=-1
 
 
 Environment=XDG_RUNTIME_DIR=/run/user/1000
