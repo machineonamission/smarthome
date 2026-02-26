@@ -18,7 +18,7 @@ Environment=OLLAMA_VULKAN=1
 Environment=OLLAMA_MAX_VRAM=2400000000
 Environment=OLLAMA_KEEP_ALIVE=-1
 
-HealthCmd=out=$(curl -s http://localhost:11434/); echo "$out"; echo "$out" | grep -q "Ollama is running" || exit 1
+HealthCmd=out=$(bash -c 'exec 3<>/dev/tcp/127.0.0.1/11434 && echo -e "GET / HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n" >&3 && cat <&3'); echo "$out"; echo "$out" | grep -q "Ollama is running" || exit 1
 HealthInterval=10s
 HealthTimeout=10s
 HealthRetries=10
