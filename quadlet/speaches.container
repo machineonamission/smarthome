@@ -22,7 +22,7 @@ HealthCmd=out=$(curl -s http://localhost:8000/health); echo "$out"; echo "$out" 
 HealthInterval=10s
 HealthTimeout=10s
 HealthRetries=10
-HealthStartupRetries=-1
+HealthStartupRetries=100
 Notify=healthy
 
 [Service]
