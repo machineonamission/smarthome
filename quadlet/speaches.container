@@ -5,6 +5,8 @@ Description=Speaches AI Services
 Pod=smarthome.pod
 ContainerName=speaches
 Image=ghcr.io/speaches-ai/speaches:0.9.0-rc.3-cuda
+AutoUpdate=registry
+Pull=newer
 Environment=enable_ui=False
 Environment=log_level=debug
 Environment=WHISPER__MODEL=Systran/faster-distil-whisper-small.en

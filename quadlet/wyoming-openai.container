@@ -7,6 +7,8 @@ Requires=speaches.container
 Pod=smarthome.pod
 ContainerName=wyoming_openai
 Image=ghcr.io/roryeckel/wyoming_openai:latest
+AutoUpdate=registry
+Pull=newer
 Environment=WYOMING_URI=tcp://0.0.0.0:10300
 Environment=WYOMING_LOG_LEVEL=DEBUG
 Environment=WYOMING_LANGUAGES=en

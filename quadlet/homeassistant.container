@@ -11,6 +11,8 @@ Image=ghcr.io/home-assistant/home-assistant:stable
 PodmanArgs=--privileged
 Volume=haconfig.volume:/config
 Volume=/run/dbus:/run/dbus:ro
+AutoUpdate=registry
+Pull=newer
 
 [Service]
 Restart=always
