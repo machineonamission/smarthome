@@ -1,10 +1,12 @@
 [Unit]
 Description=Ollama Brain
+Wants=ollama_fork-build.service
+After=ollama_fork-build.service
 
 [Container]
 Pod=smarthome.pod
 ContainerName=ollama
-Image=ollama_fork.build
+Image=localhost/ollama_fork:latest
 Pull=missing
 Volume=ollama-data.volume:/root/.ollama:Z
 AddDevice=nvidia.com/gpu=all
@@ -14,9 +16,16 @@ Environment=OLLAMA_KV_CACHE_TYPE=q4_0
 Environment=OLLAMA_CONTEXT_LENGTH=8000
 Environment=OLLAMA_VULKAN=1
 Environment=OLLAMA_MAX_VRAM=2400000000
+Environment=OLLAMA_KEEP_ALIVE=-1
+
+HealthCmd=out=$(bash -c 'exec 3<>/dev/tcp/127.0.0.1/11434 && echo -e "GET / HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n" >&3 && cat <&3'); echo "$out"; echo "$out" | grep -q "Ollama is running" || exit 1
+HealthInterval=10s
+HealthTimeout=10s
+HealthRetries=10
+Notify=healthy
+HealthStartupRetries=100
 
 [Service]
 Restart=always
-ExecStartPost=/bin/sleep 5
-ExecStartPost=-/usr/bin/podman exec ollama ollama pull qwen3:4b-instruct
-ExecStartPost=-/usr/bin/podman exec ollama ollama pull qwen3:1.7b
+ExecStartPost=-/usr/sbin/curl http://localhost:11434/api/pull -d '{"model": "qwen3:4b-instruct"}'
+ExecStartPost=-/usr/sbin/curl -s -X POST http://localhost:11434/api/generate -d '{"model":"qwen3:4b-instruct","keep_alive":-1}'

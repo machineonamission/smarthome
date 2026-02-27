@@ -20,11 +20,11 @@ Volume=huggingface-hub.volume:/home/ubuntu/.cache/huggingface/hub
 AddDevice=nvidia.com/gpu=all
 
 # Native Healthchecks
-HealthCmd=curl -f http://localhost:8000/health || exit 1
-HealthInterval=30s
+HealthCmd=out=$(bash -c 'exec 3<>/dev/tcp/127.0.0.1/8000 && echo -e "GET /health HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n" >&3 && cat <&3'); echo "$out"; echo "$out" | grep -q '{"message":"OK"}' || exit 1
+HealthInterval=10s
 HealthTimeout=10s
-HealthRetries=3
-HealthStartPeriod=40s
+HealthRetries=10
+HealthStartupRetries=100
 Notify=healthy
 
 [Service]

@@ -14,5 +14,16 @@ Volume=/run/dbus:/run/dbus:ro
 AutoUpdate=registry
 Pull=newer
 
+# todo need to figure out some auth bullshit here
+#HealthCmd=curl \
+           #  -H "Authorization: Bearer TOKEN" \
+           #  -H "Content-Type: application/json" \
+           #  http://localhost:8123/api
+#HealthInterval=10s
+#HealthTimeout=10s
+#HealthRetries=10
+#Notify=healthy
+#HealthStartupRetries=100
+
 [Service]
 Restart=always

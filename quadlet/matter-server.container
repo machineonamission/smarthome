@@ -12,5 +12,12 @@ AppArmor=unconfined
 Volume=matter-server-data.volume:/data:z
 Volume=/run/dbus:/run/dbus:ro
 
+HealthCmd=curl --fail-with-body localhost:5580/info
+HealthInterval=10s
+HealthTimeout=10s
+HealthRetries=10
+Notify=healthy
+HealthStartupRetries=100
+
 [Service]
 Restart=always
