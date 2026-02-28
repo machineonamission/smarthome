@@ -11,6 +11,7 @@ Image=ghcr.io/home-assistant/home-assistant:stable
 PodmanArgs=--privileged
 Volume=haconfig.volume:/config
 Volume=/run/dbus:/run/dbus:ro
+Volume=/run/systemd/resolve/resolv.conf:/etc/resolv.conf:ro
 AutoUpdate=registry
 Pull=newer
 
