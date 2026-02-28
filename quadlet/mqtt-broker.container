@@ -7,6 +7,7 @@ Environment=EMQX_LISTENERS__TCP__DEFAULT__BIND=0.0.0.0:1883
 Environment=EMQX_LISTENERS__WS__DEFAULT__BIND=0.0.0.0:8083
 Environment=EMQX_LOG__CONSOLE__LEVEL=debug
 Environment=EMQX_HOST=localhost
+Environment=EMQX_TELEMETRY__ENABLE=false
 Environment=EMQX_NODE__NAME=emqx@localhost
 Image=docker.io/emqx/emqx:latest
 Volume=emqx_config.volume:/opt/emqx/etc
