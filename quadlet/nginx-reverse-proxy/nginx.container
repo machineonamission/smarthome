@@ -1,0 +1,11 @@
+[Container]
+Pod=smarthome.pod
+ContainerName=nginx
+Image=docker.io/jc21/nginx-proxy-manager:latest
+AutoUpdate=registry
+Pull=newer
+Volume=nginx-data.volume:/data
+Volume=nginx-le.volume:/etc/letsencrypt
+
+[Service]
+Restart=always

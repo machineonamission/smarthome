@@ -1,0 +1,4 @@
+[Volume]
+Device=/srv/volumes/smarthome/nginx/lets-encrypt
+Options=bind,Z
+Type=bind

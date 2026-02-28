@@ -1,0 +1,4 @@
+[Volume]
+Device=/srv/volumes/smarthome/nginx/data
+Options=bind,Z
+Type=bind
