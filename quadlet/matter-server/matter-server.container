@@ -9,7 +9,7 @@ Image=ghcr.io/matter-js/python-matter-server:stable
 AutoUpdate=registry
 Pull=newer
 AppArmor=unconfined
-Volume=matter-server-data.volume:/data:z
+Volume=matter-server-data.volume:/data:Z
 Volume=/run/dbus:/run/dbus:ro
 
 HealthCmd=curl --fail-with-body localhost:5580/info

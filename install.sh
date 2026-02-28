@@ -1,5 +1,5 @@
 git pull
 sleep 1
-podman quadlet install -r quadlet/
+find ./quadlet -type f -exec podman quadlet install -r {} +
 sleep 1
 systemctl restart smarthome-pod.service
