@@ -5,7 +5,9 @@ Environment=EMQX_LOADED_PLUGINS="emqx_auth_username,emqx_management"
 #Environment=EMQX_AUTH__USER__1__PASSWORD=password
 #Environment=EMQX_LISTENERS__TCP__DEFAULT=0.0.0.0:1883
 #Environment=EMQX_LISTENERS__WS__DEFAULT=0.0.0.0:8083
+Environment=EMQX_HOST=127.0.0.1
+Environment=EMQX_NAME=emqx@127.0.0.1
 Image=docker.io/emqx/emqx:latest
-Volume=emqx_config:/opt/emqx/etc
-Volume=emqx_log:/opt/emqx/log
-Volume=emqx_data:/opt/emqx/data
+Volume=emqx_config.volume:/opt/emqx/etc
+Volume=emqx_log.volume:/opt/emqx/log
+Volume=emqx_data.volume:/opt/emqx/data
