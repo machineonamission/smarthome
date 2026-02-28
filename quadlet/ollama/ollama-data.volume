@@ -1,4 +1,4 @@
 [Volume]
 Device=/srv/volumes/smarthome/ollama/data
-Options=bind,Z
+
 Type=bind

@@ -54,7 +54,6 @@ for entry in "${MAPPINGS[@]}"; do
 [Volume]
 Type=none
 Device=$BASE_DIR/$service/$sub_folder
-Options=bind,Z
 EOF
     echo "Created $QUADLET_DIR/$vol_file"
 done

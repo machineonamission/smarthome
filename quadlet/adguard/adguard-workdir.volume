@@ -1,4 +1,3 @@
 [Volume]
 Device=/srv/volumes/smarthome/adguard/work
-Options=bind,Z
 Type=bind

@@ -1,4 +1,3 @@
 [Volume]
 Device=/srv/volumes/smarthome/speaches/huggingface
-Options=bind,Z
 Type=bind
