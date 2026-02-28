@@ -11,4 +11,4 @@ Environment=MQTT_BROKER_API_PORT=1883
 #Environment=OPENHAB_SERVER_IP=openhab.local
 #Environment=OPENHAB_SERVER_PORT=8080
 
-Image=alackmann/node-blueair-local:latest
+Image=docker.io/alackmann/node-blueair-local:latest
