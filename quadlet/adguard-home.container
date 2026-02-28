@@ -1,0 +1,6 @@
+[Container]
+Pod=smarthome.pod
+ContainerName=adguardhome
+Image=docker.io/adguard/adguardhome
+Volume=adguard-workdir.volume:/opt/adguardhome/work
+Volume=adguard-config.volume:/opt/adguardhome/conf
