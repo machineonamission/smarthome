@@ -1,0 +1,6 @@
+[Container]
+Image=docker.io/homebridge/homebridge:latest
+Volume=homebridge.volume:/homebridge
+Pod=smarthome.pod
+AutoUpdate=registry
+Pull=newer
