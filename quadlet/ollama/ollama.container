@@ -8,7 +8,7 @@ Pod=smarthome.pod
 ContainerName=ollama
 Image=localhost/ollama_fork:latest
 Pull=missing
-Volume=ollama-data.volume:/root/.ollama:Z
+Volume=ollama-data.volume:/root/.ollama:z
 AddDevice=nvidia.com/gpu=all
 Environment=OLLAMA_DEBUG=2
 Environment=OLLAMA_FLASH_ATTENTION=1
