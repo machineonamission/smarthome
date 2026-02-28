@@ -1,7 +1,7 @@
 [Unit]
 Description=Home Assistant Core
-After=ollama.container speaches.container wyoming-openai.container linux-voice-assistant.container matter-server.container blueair-local.container mqtt-broker.container
-Wants=ollama.container speaches.container wyoming-openai.container linux-voice-assistant.container matter-server.container blueair-local.container mqtt-broker.container
+After=ollama.container speaches.container wyoming-openai.container linux-voice-assistant.container matter-server.container
+Wants=ollama.container speaches.container wyoming-openai.container linux-voice-assistant.container matter-server.container
 
 [Container]
 Pod=smarthome.pod
