@@ -1,0 +1,4 @@
+[Volume]
+Device=/srv/volumes/smarthome/adguard/conf
+Options=bind,Z
+Type=bind

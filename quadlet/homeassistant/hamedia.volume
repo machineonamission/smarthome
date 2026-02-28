@@ -1,0 +1,4 @@
+[Volume]
+Device=/srv/volumes/smarthome/homeassistant/media
+Options=bind,Z
+Type=bind

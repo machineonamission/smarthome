@@ -1,0 +1,4 @@
+[Volume]
+Device=/srv/volumes/smarthome/lva/config
+Options=bind,Z
+Type=bind

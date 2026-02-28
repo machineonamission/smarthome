@@ -1,0 +1,4 @@
+[Volume]
+Device=/srv/volumes/smarthome/lva/wakeword
+Options=bind,Z
+Type=bind
