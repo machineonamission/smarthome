@@ -1,10 +1,10 @@
 [Container]
 Pod=smarthome.pod
 Environment=EMQX_LOADED_PLUGINS="emqx_auth_username,emqx_management"
-Environment=EMQX_AUTH__USER__1__USERNAME=user
-Environment=EMQX_AUTH__USER__1__PASSWORD=password
-Environment=EMQX_LISTENERS__TCP__DEFAULT=0.0.0.0:1883
-Environment=EMQX_LISTENERS__WS__DEFAULT=0.0.0.0:8083
+#Environment=EMQX_AUTH__USER__1__USERNAME=user
+#Environment=EMQX_AUTH__USER__1__PASSWORD=password
+#Environment=EMQX_LISTENERS__TCP__DEFAULT=0.0.0.0:1883
+#Environment=EMQX_LISTENERS__WS__DEFAULT=0.0.0.0:8083
 Image=docker.io/emqx/emqx:latest
 Volume=emqx_config:/opt/emqx/etc
 Volume=emqx_log:/opt/emqx/log
