@@ -1,0 +1,16 @@
+[Build]
+ImageTag=localhost/blueair-local
+SetWorkingDirectory=https://github.com/machineonamission/blueair-local.git
+Pull=missing
+# 8 cpus
+PodmanArgs=--cpu-period=100000
+PodmanArgs=--cpu-quota=800000
+# 8g, unlimited swap
+PodmanArgs=--memory=8g
+PodmanArgs=--memory-swap=-1
+PodmanArgs=--cache-from=docker.io/alackmann/node-blueair-local:latest
+
+[Service]
+# Only proceed with this build if the image is missing.
+# If it exists, the shell exits with 1, which tells systemd to gracefully skip the build command.
+ExecCondition=/bin/sh -c '/usr/bin/podman image exists localhost/blueair-local && exit 1 || exit 0'
