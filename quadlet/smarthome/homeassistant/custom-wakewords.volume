@@ -1,3 +1,0 @@
-[Volume]
-Device=/srv/volumes/smarthome/homeassistant/custom_wakewords
-Type=bind
