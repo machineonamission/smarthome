@@ -1,5 +1,5 @@
 [Container]
-Pod=smarthome.pod
+Pod=net.pod
 ContainerName=adguardhome
 Image=docker.io/adguard/adguardhome
 Volume=adguard-workdir.volume:/opt/adguardhome/work:z

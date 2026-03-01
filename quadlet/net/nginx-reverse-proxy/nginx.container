@@ -1,5 +1,5 @@
 [Container]
-Pod=smarthome.pod
+Pod=net.pod
 ContainerName=nginx
 Image=docker.io/jc21/nginx-proxy-manager:latest
 AutoUpdate=registry

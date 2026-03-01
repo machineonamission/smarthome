@@ -1,0 +1,9 @@
+[Pod]
+PodName=net
+Network=host
+
+[Install]
+WantedBy=multi-user.target default.target
+
+[Service]
+Restart=always
