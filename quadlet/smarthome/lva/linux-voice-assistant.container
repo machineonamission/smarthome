@@ -14,6 +14,7 @@ GroupAdd=audio
 # the :U flag makes the stupid post-start one-shot container redundant. podman my beloved
 Volume=wakeword_data.volume:/app/local:U
 Volume=lva-configuration.volume:/app/configuration:U
+Volume=custom-wakewords.volume:/app/wakewords/custom:U
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/etc/timezone:/etc/timezone:ro
 Volume=/run/user/1000:/run/user/1000
@@ -39,9 +40,9 @@ Environment=XDG_RUNTIME_DIR=/run/user/1000
 Environment=PULSE_SERVER=unix:/run/user/1000/pulse/native
 
 Environment=ENABLE_THINKING_SOUND=1
-Environment=WAKE_MODEL=/app/wakewords/openWakeWord/ok_nabu_v0.1.tflite
-Environment=STOP_MODEL=stop
-Environment=WAKE_WORD_DIR=/app/wakewords/openWakeWord
+#Environment=WAKE_MODEL=/app/wakewords/openWakeWord/ok_nabu_v0.1.tflite
+#Environment=STOP_MODEL=stop
+Environment=WAKE_WORD_DIR=wakewords/custom
 #Environment=REFACTORY_SECONDS=0
 # --------------------------------------------------
 

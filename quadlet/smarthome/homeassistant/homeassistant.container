@@ -11,6 +11,7 @@ Image=ghcr.io/home-assistant/home-assistant:stable
 PodmanArgs=--privileged
 Volume=haconfig.volume:/config:z
 Volume=hamedia.volume:/media:z
+Volume=custom-wakewords.volume:/share/openwakeword:z
 Volume=/run/dbus:/run/dbus:ro
 Volume=/srv/quadlet/smarthome/dnshack.conf:/etc/resolv.conf:ro
 AutoUpdate=registry
