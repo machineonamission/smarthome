@@ -3,7 +3,7 @@
 ContainerName=openhab
 Pod=smarthome.pod
 Environment=CRYPTO_POLICY=unlimited
-Image=openhab/openhab:milestone
+Image=docker.io/openhab/openhab:milestone
 AutoUpdate=registry
 Pull=newer
 Volume=/etc/localtime:/etc/localtime:ro
