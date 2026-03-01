@@ -39,9 +39,9 @@ Environment=XDG_RUNTIME_DIR=/run/user/1000
 Environment=PULSE_SERVER=unix:/run/user/1000/pulse/native
 
 Environment=ENABLE_THINKING_SOUND=1
-Environment=WAKE_MODEL=okay_nabu
+Environment=WAKE_MODEL=ok_nabu_v0.1
 Environment=STOP_MODEL=stop
-Environment=WAKE_WORD_DIR=/app/wakewords/openWakeWord
+Environment=WAKE_WORD_DIR=app/wakewords/openWakeWord
 Environment=REFACTORY_SECONDS=0
 # --------------------------------------------------
 
