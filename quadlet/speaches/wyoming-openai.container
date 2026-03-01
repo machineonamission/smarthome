@@ -1,7 +1,7 @@
 [Unit]
 Description=Wyoming OpenAI Bridge
 After=speaches.container
-Requires=speaches.container
+Wants=speaches.container
 
 [Container]
 Pod=smarthome.pod
