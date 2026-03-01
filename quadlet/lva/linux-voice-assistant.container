@@ -26,8 +26,6 @@ HealthRetries=3
 HealthStartupRetries=100
 
 
-Environment=XDG_RUNTIME_DIR=/run/user/1000
-Environment=PULSE_SERVER=unix:/run/user/1000/pulse/native
 # --- .env file ---
 Environment=ENABLE_DEBUG=1
 Environment=LVA_USER_ID=1000
@@ -38,6 +36,8 @@ Environment=LVA_XDG_RUNTIME_DIR=/run/user/1000
 Environment=ENABLE_THINKING_SOUND=1
 Environment=WAKE_MODEL=okay_nabu
 Environment=STOP_MODEL=stop
+Environment=WAKE_WORD_DIR=/app/wakewords/openWakeWord
+Environment=REFACTORY_SECONDS=0
 # --------------------------------------------------
 
 [Service]
