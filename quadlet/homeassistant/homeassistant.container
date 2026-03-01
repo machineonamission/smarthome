@@ -12,7 +12,7 @@ PodmanArgs=--privileged
 Volume=haconfig.volume:/config:z
 Volume=hamedia.volume:/media:z
 Volume=/run/dbus:/run/dbus:ro
-Volume=/run/systemd/resolve/resolv.conf:/etc/resolv.conf:ro
+Volume=/srv/quadlet/smarthome/dnshack.conf:/etc/resolv.conf:ro
 AutoUpdate=registry
 Pull=newer
 
