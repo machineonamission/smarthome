@@ -42,10 +42,22 @@ Environment=PULSE_SERVER=unix:/run/user/1000/pulse/native
 Environment=ENABLE_THINKING_SOUND=1
 #Environment=WAKE_MODEL=/app/wakewords/openWakeWord/ok_nabu_v0.1.tflite
 #Environment=STOP_MODEL=stop
-Environment=WAKE_WORD_DIR=wakewords/custom
+Environment=WAKE_WORD_DIR=/app/wakewords/custom
 #Environment=REFACTORY_SECONDS=0
 # --------------------------------------------------
 
 [Service]
 Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
+ExecStartPost=/usr/sbin/podman exec linux-voice-assistant bash -c ' \
+for file in "$TARGET_DIR"/*.tflite; do \
+  model_name=$(basename "$file" .tflite) \
+  json_file="${file%.tflite}.json" \
+  cat <<EOF > "$json_file" \
+{ \
+  "type": "openWakeWord", \
+  "wake_word": "$model_name", \
+  "model": "${model_name}.tflite" \
+} \
+EOF \
+done'
