@@ -1,0 +1,21 @@
+# amniotic.container
+[Container]
+ContainerName=amniotic
+Environment=AMNIOTIC__HA_CORE_API=https://localhost:8123/api
+#SUPERVISOR_TOKEN=your_long_lived_access_token
+EnvironmentFile=secret.env
+AMNIOTIC__MQTT__HOSTNAME=localhost
+AMNIOTIC__STREAM_URL=http://localhost:8007
+AMNIOTIC__PATH_AUDIO=/amniotic/audio
+AMNIOTIC__PATH_CONFIG=/amniotic/config
+Group=1000
+HostName=amniotic
+Image=fmtr/amniotic:latest
+PublishPort=8007:8080
+User=1000
+Volume=amniotic-audio.volume:/amniotic/audio
+Volume=amniotic-config.volume:/amniotic/config
+Pod=smarthome.pod
+
+[Service]
+Restart=always
