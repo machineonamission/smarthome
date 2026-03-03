@@ -13,8 +13,8 @@ Group=1000
 Image=docker.io/fmtr/amniotic:latest
 #PublishPort=8007:8080
 User=1000
-Volume=amniotic-audio.volume:/amniotic/audio
-Volume=amniotic-config.volume:/amniotic/config
+Volume=amniotic-audio.volume:/amniotic/audio:z
+Volume=amniotic-config.volume:/amniotic/config:z
 Pod=smarthome.pod
 
 [Service]
