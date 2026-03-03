@@ -8,7 +8,7 @@ Environment=AMNIOTIC__MQTT__HOSTNAME=127.0.0.1
 Environment=AMNIOTIC__STREAM_URL=http://127.0.0.1:8080
 Environment=AMNIOTIC__PATH_AUDIO=/amniotic/audio
 Environment=AMNIOTIC__PATH_CONFIG=/amniotic/config
-Environment=AMNIOTIC__LOGGING=debug
+Environment=AMNIOTIC__LOGGING=10
 Group=1000
 #HostName=amniotic
 Image=docker.io/fmtr/amniotic:latest
