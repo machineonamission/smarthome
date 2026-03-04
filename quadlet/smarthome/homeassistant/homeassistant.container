@@ -20,6 +20,7 @@ EnvironmentFile=HA-healthcheck-token.env
 
 AddCapability=NET_ADMIN
 AddCapability=NET_RAW
+AddCapability=SYS_ADMIN
 
 
 
