@@ -47,8 +47,10 @@ Environment=WAKE_WORD_DIR=wakewords/custom
 Environment=AUDIO_OUTPUT_DEVICE=pipewire/effect_input.normalized
 Environment=AUDIO_INPUT_DEVICE="RNNoise Mic"
 # --------------------------------------------------
-HealthCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
-HealthStartupCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
+#HealthCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
+HealthCmd=ss -tulpn | grep :6053
+HealthStartupCmd=ss -tulpn | grep :6053
+#HealthStartupCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
 HealthInterval=10s
 HealthTimeout=10s
 HealthRetries=3
