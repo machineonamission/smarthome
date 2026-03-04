@@ -20,11 +20,11 @@ Volume=/etc/timezone:/etc/timezone:ro
 Volume=/run/user/1000:/run/user/1000
 
 # Native Healthchecks
-HealthCmd=pgrep -f linux_voice_assistant || exit 1
-HealthInterval=30s
-HealthTimeout=5s
-HealthRetries=3
-HealthStartupRetries=100
+#HealthCmd=pgrep -f linux_voice_assistant || exit 1
+#HealthInterval=30s
+#HealthTimeout=5s
+#HealthRetries=3
+#HealthStartupRetries=100
 
 
 
@@ -57,6 +57,6 @@ HealthStartupInterval=3s
 HealthOnFailure="kill"
 
 [Service]
-#Restart=always
+Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
 ExecStartPre=/usr/bin/bash -c 'shopt -s nullglob; for f in /srv/volumes/smarthome/lva/custom_wakewords/*.tflite; do m=$$(basename "$$f" .tflite); echo "{\\\"type\\\": \\\"openWakeWord\\\", \\\"wake_word\\\": \\\"$$m\\\", \\\"model\\\": \\\"$$m.tflite\\\"}" > "$$(dirname "$$f")/$$m.json"; done'

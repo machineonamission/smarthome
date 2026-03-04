@@ -29,6 +29,7 @@ HealthRetries=10
 Notify=healthy
 HealthStartupInterval=3s
 HealthStartupRetries=100
+HealthOnFailure="kill"
 
 [Service]
 Restart=always
