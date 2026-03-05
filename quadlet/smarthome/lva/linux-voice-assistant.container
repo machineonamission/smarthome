@@ -44,7 +44,7 @@ Environment=ENABLE_THINKING_SOUND=1
 #Environment=STOP_MODEL=stop
 Environment=WAKE_WORD_DIR=wakewords/custom
 #Environment=REFACTORY_SECONDS=0
-Environment=AUDIO_OUTPUT_DEVICE=pipewire/effect_input.normalized
+Environment=AUDIO_OUTPUT_DEVICE=pipewire/dynaudnorm.capture
 Environment=AUDIO_INPUT_DEVICE="RNNoise Mic"
 # --------------------------------------------------
 #HealthCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
