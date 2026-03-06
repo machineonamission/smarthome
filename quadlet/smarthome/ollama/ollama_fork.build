@@ -6,7 +6,7 @@ Pull=missing
 PodmanArgs=--cpu-period=100000
 PodmanArgs=--cpu-quota=800000
 # 8g, unlimited swap
-PodmanArgs=--memory=8g
+PodmanArgs=--memory=5g
 PodmanArgs=--memory-swap=-1
 PodmanArgs=--cache-from=ghcr.io/ollama/ollama
 
