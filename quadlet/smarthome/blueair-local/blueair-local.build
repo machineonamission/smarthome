@@ -1,0 +1,9 @@
+[Build]
+ImageTag=alackmann/blueair-local
+SetWorkingDirectory=https://github.com/alackmann/blueair-local.git
+Pull=missing
+
+[Service]
+# Only proceed with this build if the image is missing.
+# If it exists, the shell exits with 1, which tells systemd to gracefully skip the build command.
+ExecCondition=/bin/sh -c '/usr/bin/podman image exists alackmann/blueair-local && exit 1 || exit 0'
