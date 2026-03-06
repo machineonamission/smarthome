@@ -44,7 +44,7 @@ Environment=ENABLE_THINKING_SOUND=1
 #Environment=STOP_MODEL=stop
 Environment=WAKE_WORD_DIR=wakewords/custom
 #Environment=REFACTORY_SECONDS=0
-Environment=AUDIO_OUTPUT_DEVICE=pipewire/dynaudnorm.capture
+Environment=AUDIO_OUTPUT_DEVICE=pipewire/sink.echo_cancel
 Environment=AUDIO_INPUT_DEVICE="RNNoise Mic"
 # --------------------------------------------------
 #HealthCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
@@ -62,4 +62,4 @@ HealthOnFailure="kill"
 [Service]
 Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
-ExecStartPre=/usr/bin/bash -c 'shopt -s nullglob; for f in /srv/volumes/smarthome/lva/custom_wakewords/*.tflite; do m=$$(basename "$$f" .tflite); echo "{\\\"type\\\": \\\"openWakeWord\\\", \\\"wake_word\\\": \\\"$$m\\\", \\\"model\\\": \\\"$$m.tflite\\\"}" > "$$(dirname "$$f")/$$m.json"; done'
+ExecStartPre=-/usr/bin/bash -c 'shopt -s nullglob; for f in /srv/volumes/smarthome/lva/custom_wakewords/*.tflite; do m=$$(basename "$$f" .tflite); echo "{\\\"type\\\": \\\"openWakeWord\\\", \\\"wake_word\\\": \\\"$$m\\\", \\\"model\\\": \\\"$$m.tflite\\\"}" > "$$(dirname "$$f")/$$m.json"; done'

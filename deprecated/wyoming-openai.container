@@ -25,15 +25,15 @@ Environment=TTS_STREAMING_MODELS=speaches-ai/Kokoro-82M-v1.0-ONNX-fp16
 Environment=TTS-OPENAI-KEY=unused
 
 
-HealthCmd=bash -c 'exec 3<>/dev/tcp/127.0.0.1/10300 && echo "{\"type\":\"describe\"}" >&3 && read -t 2 response <&3; echo "$response"; echo "$response" | grep -q "info"'
-HealthStartupCmd=bash -c 'exec 3<>/dev/tcp/127.0.0.1/10300 && echo "{\"type\":\"describe\"}" >&3 && read -t 2 response <&3; echo "$response"; echo "$response" | grep -q "info"'
-HealthInterval=10s
-HealthTimeout=10s
-HealthRetries=10
-Notify=healthy
-HealthStartupInterval=3s
-HealthStartupRetries=100
-HealthOnFailure="kill"
+#HealthCmd=bash -c 'exec 3<>/dev/tcp/127.0.0.1/10300 && echo "{\"type\":\"describe\"}" >&3 && read -t 2 response <&3; echo "$response"; echo "$response" | grep -q "info"'
+#HealthStartupCmd=bash -c 'exec 3<>/dev/tcp/127.0.0.1/10300 && echo "{\"type\":\"describe\"}" >&3 && read -t 2 response <&3; echo "$response"; echo "$response" | grep -q "info"'
+#HealthInterval=10s
+#HealthTimeout=10s
+#HealthRetries=10
+#Notify=healthy
+#HealthStartupInterval=3s
+#HealthStartupRetries=100
+#HealthOnFailure="kill"
 
 [Service]
 Restart=always
