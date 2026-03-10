@@ -45,7 +45,7 @@ Environment=ENABLE_THINKING_SOUND=1
 Environment=WAKE_WORD_DIR=wakewords/custom
 #Environment=REFACTORY_SECONDS=0
 Environment=AUDIO_OUTPUT_DEVICE=pipewire/sink.echo_cancel
-Environment=AUDIO_INPUT_DEVICE="RNNoise Mic"
+Environment=AUDIO_INPUT_DEVICE=source.echo_cancel
 # --------------------------------------------------
 #HealthCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
 HealthCmd=ss -tulpn | grep :6053
