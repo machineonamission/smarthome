@@ -59,7 +59,7 @@ HealthStartupCmd=ss -tulpn | grep :6053
 #HealthStartupRetries=100
 #HealthStartupInterval=3s
 #HealthOnFailure="kill"
-Exec=--list-input-devices
+#Exec=--list-input-devices
 [Service]
 Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
