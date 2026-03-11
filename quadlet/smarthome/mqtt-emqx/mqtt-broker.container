@@ -5,9 +5,9 @@ Pod=smarthome.pod
 #Environment=EMQX_AUTH__USER__1__PASSWORD=password
 Environment=EMQX_LISTENERS__TCP__DEFAULT__BIND=0.0.0.0:1883
 Environment=EMQX_LISTENERS__SSL__DEFAULT__BIND="0.0.0.0:8883"
-Environment=EMQX_LISTENERS__SSL__DEFAULT__SSL_OPTIONS__CERTFILE="$${EMQX_ETC_DIR}/certs/client/fullchain1.pem"
-Environment=EMQX_LISTENERS__SSL__DEFAULT__SSL_OPTIONS__KEYFILE="$${EMQX_ETC_DIR}/certs/client/privkey1.pem"
-Environment=EMQX_LISTENERS__SSL__DEFAULT__SSL_OPTIONS__CACERTFILE="$${EMQX_ETC_DIR}/certs/client/chain1.pem"
+Environment=EMQX_LISTENERS__SSL__DEFAULT__SSL_OPTIONS__CERTFILE="/opt/emqx/etc/certs/client/fullchain1.pem"
+Environment=EMQX_LISTENERS__SSL__DEFAULT__SSL_OPTIONS__KEYFILE="/opt/emqx/etc/certs/client/privkey1.pem"
+Environment=EMQX_LISTENERS__SSL__DEFAULT__SSL_OPTIONS__CACERTFILE="/opt/emqx/etc/certs/client/chain1.pem"
 Environment=EMQX_LISTENERS__WS__DEFAULT__BIND=0.0.0.0:8083
 Environment=EMQX_LISTENERS__WSS__DEFAULT__BIND=0.0.0.0:8084
 Environment=EMQX_LOG__CONSOLE__LEVEL=debug
