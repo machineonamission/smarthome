@@ -62,4 +62,4 @@ Exec=--list-input-devices
 [Service]
 Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
-ExecStartPre=-/usr/bin/bash -c 'shopt -s nullglob; for f in /srv/volumes/smarthome/lva/custom_wakewords/*.tflite; do m=$$(basename "$$f" .tflite); echo "{\\\"type\\\": \\\"openWakeWord\\\", \\\"wake_word\\\": \\\"$$m\\\", \\\"model\\\": \\\"$$m.tflite\\\"}" > "$$(dirname "$$f")/$$m.json"; done'
+#ExecStartPre=-/usr/bin/bash -c 'shopt -s nullglob; for f in /srv/volumes/smarthome/lva/custom_wakewords/*.tflite; do m=$$(basename "$$f" .tflite); echo "{\\\"type\\\": \\\"openWakeWord\\\", \\\"wake_word\\\": \\\"$$m\\\", \\\"model\\\": \\\"$$m.tflite\\\"}" > "$$(dirname "$$f")/$$m.json"; done'
