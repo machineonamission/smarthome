@@ -5,6 +5,7 @@ Environment=LOG_LEVEL=debug
 Image=ghcr.io/music-assistant/server:latest
 PodmanArgs=--security-opt apparmor=unconfined
 Volume=music-assistant-data.volume:/data:z
+Volume=music-assistant-media.volume:/media:z
 Pod=smarthome.pod
 
 [Service]
