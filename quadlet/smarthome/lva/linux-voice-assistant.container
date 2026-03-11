@@ -45,7 +45,7 @@ Environment=ENABLE_THINKING_SOUND=1
 Environment=WAKE_WORD_DIR=wakewords/custom
 #Environment=REFACTORY_SECONDS=0
 Environment=AUDIO_OUTPUT_DEVICE=pipewire/sink.echo_cancel
-Environment=AUDIO_INPUT_DEVICE=pipewire/source.echo_cancel
+Environment=AUDIO_INPUT_DEVICE=source.echo_cancel
 Environment=PULSE_COOKIE="/app/configuration/tmp_pulse_cookie"
 # --------------------------------------------------
 #HealthCmd=timeout 1 bash -c 'cat < /dev/null > /dev/tcp/$${HOST:-"$$(hostname -I | awk "{print \$$1}")"}/$${PORT:-6053}'
@@ -59,7 +59,7 @@ HealthStartupCmd=ss -tulpn | grep :6053
 #HealthStartupRetries=100
 #HealthStartupInterval=3s
 #HealthOnFailure="kill"
-#Exec=--list-input-devices
+Exec=--list-input-devices
 [Service]
 Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
