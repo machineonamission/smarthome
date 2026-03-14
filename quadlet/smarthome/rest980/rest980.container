@@ -3,7 +3,7 @@ ContainerName=rest980
 Environment=BLID=6F8C63959341430CA9D22DC2F7ED42AB
 Environment="PASSWORD=:1:1756218578:t5VbxWg1Bhj9FIvY"
 Environment=ROBOT_IP=192.168.0.73
-Environment=PORT=3002
+#Environment=PORT=3002
 Environment=FIRMWARE_VERSION=2
 Image=docker.io/koalazak/rest980:latest
 Pod=smarthome.pod
