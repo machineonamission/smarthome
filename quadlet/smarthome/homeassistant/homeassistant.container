@@ -1,7 +1,7 @@
 [Unit]
 Description=Home Assistant Core
-After=ollama.container speaches.container linux-voice-assistant.container matter-server.container
-Wants=ollama.container speaches.container linux-voice-assistant.container matter-server.container
+After=ollama.container speaches.container linux-voice-assistant.container matter-server.container rest980.container mosquitto.container
+Wants=ollama.container speaches.container linux-voice-assistant.container matter-server.container rest980.container mosquitto.container
 
 [Container]
 Pod=smarthome.pod
