@@ -1,0 +1,12 @@
+[Container]
+ContainerName=rest980
+Environment=BLID=<BLID>
+Environment=PASSWORD=<PW>
+Environment=ROBOT_IP=<IP>
+Environment=FIRMWARE_VERSION=2
+Image=koalazak/rest980:latest
+Pod=smarthome.pod
+
+
+[Service]
+Restart=always

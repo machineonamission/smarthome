@@ -1,0 +1,12 @@
+[Container]
+ContainerName=mosquitto
+Image=eclipse-mosquitto
+Volume=mosquitto_config.volume:/mosquitto/etc:z
+Volume=mosquitto_log.volume:/mosquitto/log:z
+Volume=mosquitto_data.volume:/mosquitto/data:z
+AutoUpdate=registry
+Pull=newer
+Pod=smarthome.pod
+
+[Service]
+Restart=always

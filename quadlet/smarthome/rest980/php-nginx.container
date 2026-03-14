@@ -1,0 +1,8 @@
+[Container]
+ContainerName=php-nginx
+Environment=NGINX_WEBROOT=/app
+Image=webhippie/php-nginx:latest
+Volume=haconfig.volume/vacuum:/app:z
+
+[Service]
+Restart=always

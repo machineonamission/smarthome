@@ -7,6 +7,8 @@ PodmanArgs=--security-opt apparmor=unconfined
 Volume=music-assistant-data.volume:/data:z
 Volume=music-assistant-media.volume:/media:z
 Pod=smarthome.pod
+AutoUpdate=registry
+Pull=newer
 
 [Service]
 Restart=always
