@@ -26,6 +26,7 @@ Volume=/run/user/1000:/run/user/1000:ro
 #HealthRetries=3
 #HealthStartupRetries=100
 
+Network=host
 
 
 # --- .env file ---

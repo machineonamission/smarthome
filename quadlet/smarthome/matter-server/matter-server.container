@@ -10,6 +10,7 @@ AutoUpdate=registry
 Pull=newer
 AppArmor=unconfined
 Volume=matter-server-data.volume:/data:z
+Network=host
 Volume=/run/dbus:/run/dbus:ro
 
 HealthCmd=curl --fail-with-body localhost:5580/info

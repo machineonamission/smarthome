@@ -19,6 +19,7 @@ Environment=vad_model_ttl=-1
 Environment=preload_models='["speaches-ai/Kokoro-82M-v1.0-ONNX-fp16", "Systran/faster-distil-whisper-small.en"]'
 Volume=huggingface-hub.volume:/home/ubuntu/.cache/huggingface/hub:z
 AddDevice=nvidia.com/gpu=all
+Network=host
 
 # Native Healthchecks
 HealthCmd=out=$(bash -c 'exec 3<>/dev/tcp/127.0.0.1/8000 && echo -e "GET /health HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n" >&3 && cat <&3'); echo "$out"; echo "$out" | grep -q '{"message":"OK"}' || exit 1

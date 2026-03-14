@@ -8,6 +8,7 @@ Volume=music-assistant-data.volume:/data:z
 Volume=music-assistant-media.volume:/media:z
 Pod=smarthome.pod
 AutoUpdate=registry
+Network=host
 Pull=newer
 
 [Service]

@@ -5,6 +5,8 @@ Volume=mosquitto_config.volume:/mosquitto/etc:z
 Volume=mosquitto_log.volume:/mosquitto/log:z
 Volume=mosquitto_data.volume:/mosquitto/data:z
 AutoUpdate=registry
+#Network=host
+PublishPort=1883
 Pull=newer
 Pod=smarthome.pod
 
