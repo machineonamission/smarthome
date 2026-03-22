@@ -1,0 +1,13 @@
+[Container]
+ContainerName=rest980_j9
+Environment=PORT=3003
+EnvironmentFile=j9.env
+Environment=FIRMWARE_VERSION=2
+Image=docker.io/koalazak/rest980:latest
+Pod=smarthome.pod
+AutoUpdate=registry
+Pull=newer
+
+
+[Service]
+Restart=always
