@@ -1,3 +1,3 @@
 [Volume]
-Device=/srv/volumes/smarthome/nginx/data
+Device=/srv/volumes/net/nginx/data
 Type=bind

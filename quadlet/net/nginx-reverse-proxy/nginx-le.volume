@@ -1,3 +1,3 @@
 [Volume]
-Device=/srv/volumes/smarthome/nginx/lets-encrypt
+Device=/srv/volumes/net/nginx/lets-encrypt
 Type=bind
