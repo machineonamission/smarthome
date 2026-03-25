@@ -1,6 +1,6 @@
 [Build]
 ImageTag=localhost/gockai
-SetWorkingDirectory=git@github.com:CYMKEight/GockAI
+SetWorkingDirectory=https://github.com/CYMKEight/GockAI
 
 [Service]
 # Only proceed with this build if the image is missing.

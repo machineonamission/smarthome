@@ -1,6 +1,6 @@
 [Build]
 ImageTag=localhost/smutdownloader
-SetWorkingDirectory=git@github.com:machineonamission/smutdownloader
+SetWorkingDirectory=https://github.com/machineonamission/smutdownloader
 
 [Service]
 # Only proceed with this build if the image is missing.

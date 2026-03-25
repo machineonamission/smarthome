@@ -17,9 +17,9 @@ install -Dm644 pipewire-tmpfiles.conf "/etc/tmpfiles.d/pipewire.conf"
 
 install -Dm644 org.pipewire.system.conf "/etc/dbus-1/system.d/org.pipewire.system.conf"
 
-install -Dm644 wireplumber-bluetooth.conf "/etc/wireplumber/wireplumber.conf.d/11-bluetooth.conf"
+#install -Dm644 wireplumber-bluetooth.conf "/etc/wireplumber/wireplumber.conf.d/11-bluetooth.conf"
 
-install -Dm644 bluetooth-dropin.conf "/etc/systemd/system/bluetooth.service.d/pipewire-system.conf"
+#install -Dm644 bluetooth-dropin.conf "/etc/systemd/system/bluetooth.service.d/pipewire-system.conf"
 
 
 install -d "/etc/systemd/user/"
