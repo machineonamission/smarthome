@@ -1,0 +1,20 @@
+[Unit]
+After=network-online.target
+
+[Container]
+Pod=net.pod
+
+Image=docker.io/cloudflare/cloudflared:latest
+# Cloudflare handles its own routing, but we force off autoupdate
+# because immutable containers shouldn't rewrite their own binaries.
+Exec=tunnel --no-autoupdate run --token eyJhIjoiYTk4MzczZWY2MGMwYmIxMThhZmYxNDg2N2RlN2IwYTQiLCJ0IjoiMTBhM2FhZDItNzVhMC00ZmY1LTk2NTktNjA5YWVjMDk0MmE5IiwicyI6Ik1EZ3hNRGhsT1RZdE1XRmhaaTAwTVRBMExXRXhNR1F0T0RjMU5EUTRaRFUxWldKbCJ9
+# Putting it on the host network allows it to easily see all your other containers
+Network=host
+
+[Service]
+# Tell systemd to always restart the tunnel if it crashes or loses connection
+Restart=always
+TimeoutStartSec=30
+
+[Install]
+WantedBy=multi-user.target
