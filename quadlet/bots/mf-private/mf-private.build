@@ -1,7 +1,6 @@
 [Build]
 ImageTag=localhost/mediaforge
 SetWorkingDirectory=https://github.com/machineonamission/mediaforge.git
-Environment=AUTOMODE=ON
 BuildArg=AUTOMODE=ON
 
 [Service]
