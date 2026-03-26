@@ -5,8 +5,9 @@ After=smutdownloader-build.service
 [Container]
 Pod=bots.pod
 ContainerName=smutdownloader
-Image=localhost/smutdownloader:latest
-Pull=missing
+Image=ghcr.io/machineonamission/smutdownloader:main
+AutoUpdate=registry
+Pull=newer
 
 [Service]
 Restart=always

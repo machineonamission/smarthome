@@ -5,8 +5,9 @@ After=mf-private-build.service
 [Container]
 Pod=bots.pod
 ContainerName=mf-private
-Image=localhost/mediaforge:latest
-Pull=missing
+Image=ghcr.io/machineonamission/mediaforge:master
+AutoUpdate=registry
+Pull=newer
 Volume=/srv/volumes/bot/mf-private/config.py:/mediaforge/config.py:z
 Volume=/srv/volumes/bot/mf-private/database.db:/mediaforge/database.db:z
 Environment=AUTOMODE=ON

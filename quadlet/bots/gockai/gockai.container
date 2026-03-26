@@ -5,8 +5,9 @@ After=gockai-build.service
 [Container]
 Pod=bots.pod
 ContainerName=gockai
-Image=localhost/gockai:latest
-Pull=missing
+Image=ghcr.io/cymkeight/gockai:main
+AutoUpdate=registry
+Pull=newer
 
 [Service]
 Restart=always

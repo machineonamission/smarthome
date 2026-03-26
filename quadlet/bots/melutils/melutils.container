@@ -5,8 +5,9 @@ After=melutils-build.service
 [Container]
 Pod=bots.pod
 ContainerName=melutils
-Image=localhost/melutils:latest
-Pull=missing
+Image=ghcr.io/machineonamission/melutils:master
+AutoUpdate=registry
+Pull=newer
 Volume=/srv/volumes/bot/melutils/config.py:/app/config.py:z
 Volume=/srv/volumes/bot/melutils/database.sqlite:/app/database.sqlite:z
 
