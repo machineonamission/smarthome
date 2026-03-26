@@ -9,7 +9,8 @@ Image=localhost/mediaforge:latest
 Pull=missing
 Volume=/srv/volumes/bot/mf-private/config.py:/mediaforge/config.py:z
 Volume=/srv/volumes/bot/mf-private/database.db:/mediaforge/database.db:z
-Environment=AUTOMODE=true
+Environment=AUTOMODE=ON
+BuildArg=AUTOMODE=ON
 
 [Service]
 Restart=always
