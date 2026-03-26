@@ -1,0 +1,15 @@
+[Unit]
+Wants=gork-build.service
+After=gork-build.service
+
+[Container]
+Pod=bots.pod
+ContainerName=gork
+Image=localhost/gork:latest
+Pull=missing
+Volume=/srv/volumes/bot/gork/discordkey.txt:/app/discordkey.txt:z
+Volume=/srv/volumes/bot/gork/geminikey.txt:/app/geminikey.txt:z
+Volume=/srv/volumes/bot/gork/exclusions.json:/app/exclusions.json:z
+
+[Service]
+Restart=always

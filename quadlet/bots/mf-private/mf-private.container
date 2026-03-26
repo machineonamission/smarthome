@@ -1,0 +1,14 @@
+[Unit]
+Wants=mf-private-build.service
+After=mf-private-build.service
+
+[Container]
+Pod=bots.pod
+ContainerName=mf-private
+Image=localhost/mediaforge:latest
+Pull=missing
+Volume=/srv/volumes/bot/mediaforge/config.py:/app/config.py:z
+Volume=/srv/volumes/bot/mediaforge/database.db:/app/database.db:z
+
+[Service]
+Restart=always

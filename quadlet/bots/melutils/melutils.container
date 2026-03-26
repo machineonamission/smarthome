@@ -1,0 +1,14 @@
+[Unit]
+Wants=melutils-build.service
+After=melutils-build.service
+
+[Container]
+Pod=bots.pod
+ContainerName=melutils
+Image=localhost/melutils:latest
+Pull=missing
+Volume=/srv/volumes/bot/melutils/config.py:/app/config.py:z
+Volume=/srv/volumes/bot/melutils/database.sqlite:/app/database.sqlite:z
+
+[Service]
+Restart=always
