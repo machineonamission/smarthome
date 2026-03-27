@@ -4,7 +4,8 @@ Description=Linux Voice Assistant
 [Container]
 Pod=smarthome.pod
 ContainerName=linux-voice-assistant
-Image=ghcr.io/ohf-voice/linux-voice-assistant:latest
+Image=ghcr.io/omaramin-2000/linux-voice-assistant:nightly
+#Image=ghcr.io/ohf-voice/linux-voice-assistant:latest
 AutoUpdate=registry
 Pull=newer
 AddCapability=SYS_NICE
