@@ -5,6 +5,7 @@ PublishPort=6065:6065
 
 Volume=/srv/volumes/webdav:/data:z
 Volume=/srv/quadlet/quadlet/webdav/config.yml:/config.yml:ro
+Exec=-c /config.yml
 
 [Service]
 Restart=always
