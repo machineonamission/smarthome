@@ -1,4 +1,5 @@
 [Container]
+ContainerName=webdav
 Environment=AUTH_TYPE=Basic
 #Environment=USERNAME=test
 #Environment=PASSWORD=test
