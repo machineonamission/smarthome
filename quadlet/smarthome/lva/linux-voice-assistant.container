@@ -4,9 +4,9 @@ Description=Linux Voice Assistant
 [Container]
 Pod=smarthome.pod
 ContainerName=linux-voice-assistant
-Image=localhost/linux-voice-assistant:nightly-pw-volume
+#Image=localhost/linux-voice-assistant:nightly-pw-volume
 Environment=VOLUME_CONTROLLER=pipewire
-#Image=ghcr.io/ohf-voice/linux-voice-assistant:latest
+Image=ghcr.io/machineonamission/linux-voice-assistant:leds-and-buttons-events
 AutoUpdate=registry
 Pull=newer
 AddCapability=SYS_NICE
