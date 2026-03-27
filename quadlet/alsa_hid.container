@@ -1,0 +1,11 @@
+[Container]
+ContainerName=alsa_volume_from_usb_hid
+AddDevice=/dev/snd
+AddDevice=/dev/input
+Image=ghcr.io/machineonamission/linux-voice-assistant:main
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
