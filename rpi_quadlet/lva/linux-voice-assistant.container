@@ -2,7 +2,6 @@
 Description=Linux Voice Assistant
 
 [Container]
-Pod=smarthome.pod
 ContainerName=linux-voice-assistant
 Image=ghcr.io/omaramin-2000/linux-voice-assistant:nightly
 #Image=ghcr.io/ohf-voice/linux-voice-assistant:latest
@@ -64,3 +63,6 @@ HealthOnFailure="kill"
 Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
 ExecStartPre=-/usr/bin/bash -c 'shopt -s nullglob; for f in /srv/volumes/smarthome/lva/custom_wakewords/*.tflite; do m=$$(basename "$$f" .tflite); echo "{\\\"type\\\": \\\"openWakeWord\\\", \\\"wake_word\\\": \\\"$$m\\\", \\\"model\\\": \\\"$$m.tflite\\\"}" > "$$(dirname "$$f")/$$m.json"; done'
+
+[Install]
+WantedBy=multi-user.target default.target
