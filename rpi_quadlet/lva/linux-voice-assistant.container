@@ -14,7 +14,7 @@ GroupAdd=audio
 Volume=wakeword_data.volume:/app/local:z
 Volume=lva-configuration.volume:/app/configuration:z
 Volume=custom-wakewords.volume:/app/wakewords/custom:z
-Volume=/etc/localtime:/etc/localtime:ro
+#Volume=/etc/localtime:/etc/localtime:ro
 #Volume=/etc/timezone:/etc/timezone:ro
 Volume=/run/pipewire:/run/pipewire:ro
 
