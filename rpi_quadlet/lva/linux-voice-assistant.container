@@ -2,10 +2,11 @@
 Description=Linux Voice Assistant
 
 [Container]
+Pod=smarthome.pod
 ContainerName=linux-voice-assistant
-#Image=ghcr.io/omaramin-2000/linux-voice-assistant:nightly
-Image=ghcr.io/machineonamission/linux-voice-assistant:nightly-pw-volume
+Image=localhost/linux-voice-assistant:leds-and-pipewire
 Environment=VOLUME_CONTROLLER=pipewire
+#Image=ghcr.io/machineonamission/linux-voice-assistant:leds-and-buttons-events
 AutoUpdate=registry
 Pull=newer
 AddCapability=SYS_NICE
@@ -18,7 +19,6 @@ Volume=custom-wakewords.volume:/app/wakewords/custom:z
 #Volume=/etc/localtime:/etc/localtime:ro
 #Volume=/etc/timezone:/etc/timezone:ro
 Volume=/run/pipewire:/run/pipewire:ro
-Network=host
 
 # Native Healthchecks
 #HealthCmd=pgrep -f linux_voice_assistant || exit 1
@@ -33,7 +33,7 @@ Network=host
 Environment=ENABLE_DEBUG=1
 #Environment=LVA_USER_ID=1000
 #Environment=LVA_USER_GROUP=1000
-Environment=CLIENT_NAME=lva_rpi
+Environment=CLIENT_NAME=lva_kitchen
 
 Environment=LVA_PULSE_SERVER=unix:/run/pipewire/pulse/native
 Environment=LVA_XDG_RUNTIME_DIR=/run/pipewire
@@ -65,6 +65,3 @@ HealthOnFailure="kill"
 Restart=always
 #ExecStartPre=chown -R 1000:1000 /app/local /app/configuration
 ExecStartPre=-/usr/bin/bash -c 'shopt -s nullglob; for f in /srv/volumes/smarthome/lva/custom_wakewords/*.tflite; do m=$$(basename "$$f" .tflite); echo "{\\\"type\\\": \\\"openWakeWord\\\", \\\"wake_word\\\": \\\"$$m\\\", \\\"model\\\": \\\"$$m.tflite\\\"}" > "$$(dirname "$$f")/$$m.json"; done'
-
-[Install]
-WantedBy=multi-user.target default.target
