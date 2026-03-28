@@ -7,6 +7,8 @@ AutoUpdate=registry
 Pull=newer
 Pod=smarthome.pod
 AddDevice=/dev
+PodmanArgs=--privileged
+
 
 Environment=XDG_RUNTIME_DIR=/run/pipewire
 Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
