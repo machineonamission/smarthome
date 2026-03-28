@@ -7,7 +7,3 @@ WantedBy=multi-user.target default.target
 
 [Service]
 Restart=always
-
-[Unit]
-After=net.pod
-Wants=net.pod
