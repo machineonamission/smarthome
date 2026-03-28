@@ -4,7 +4,7 @@ Description=Linux Voice Assistant
 [Container]
 Pod=smarthome.pod
 ContainerName=linux-voice-assistant
-Image=localhost/linux-voice-assistant:leds-and-pipewire
+Image=ghcr.io/machineonamission/linux-voice-assistant:leds-and-pipewire
 Environment=VOLUME_CONTROLLER=pipewire
 #Image=ghcr.io/machineonamission/linux-voice-assistant:leds-and-buttons-events
 AutoUpdate=registry
