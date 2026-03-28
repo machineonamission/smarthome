@@ -6,7 +6,7 @@ GroupAdd=audio
 AutoUpdate=registry
 Pull=newer
 Pod=smarthome.pod
-Volume=/dev/bus/usb:/dev/bus/usb:ro
+Volume=/dev:/dev:ro
 PodmanArgs=--privileged
 SecurityLabelDisable=true
 Environment=PYTHONUNBUFFERED=1
