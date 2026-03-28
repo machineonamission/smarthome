@@ -9,7 +9,7 @@ Pod=smarthome.pod
 Volume=/dev/bus/usb:/dev/bus/usb:ro
 PodmanArgs=--privileged
 SecurityLabelDisable=true
-
+Environment=PYTHONUNBUFFERED=1
 
 
 Environment=XDG_RUNTIME_DIR=/run/pipewire
