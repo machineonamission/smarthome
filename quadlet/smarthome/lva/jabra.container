@@ -6,13 +6,13 @@ GroupAdd=audio
 AutoUpdate=registry
 Pull=newer
 Pod=smarthome.pod
-Volume=/dev:/dev
-PodmanArgs=--privileged
-Unmask=all
-SecurityLabelDisable=true
-AddCapability=all
-SeccompProfile=unconfined
-PodmanArgs=--security-opt apparmor=unconfined
+#Volume=/dev:/dev
+#PodmanArgs=--privileged
+#Unmask=all
+#SecurityLabelDisable=true
+#AddCapability=all
+#SeccompProfile=unconfined
+#PodmanArgs=--security-opt apparmor=unconfined
 Environment=PYTHONUNBUFFERED=1
 
 
