@@ -2,10 +2,13 @@
 ContainerName=alsa_volume_from_usb_hid
 AddDevice=/dev/snd
 AddDevice=/dev/input
+AddDevice=/dev/bus/usb
 Image=ghcr.io/machineonamission/alsa_volume_from_usb_hid:main
 Pod=smarthome.pod
 AutoUpdate=registry
 Pull=newer
+
+Exec=-l debug
 
 [Service]
 Restart=always
