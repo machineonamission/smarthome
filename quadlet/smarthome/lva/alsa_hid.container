@@ -1,8 +1,8 @@
 [Container]
 ContainerName=alsa_volume_from_usb_hid
-AddDevice=/dev/snd
-AddDevice=/dev/input
-AddDevice=/dev/bus/usb
+AddDevice=/dev/snd:rw
+AddDevice=/dev/input:r
+AddDevice=/dev/bus/usb:r
 Image=ghcr.io/machineonamission/alsa_volume_from_usb_hid:main
 Pod=smarthome.pod
 AutoUpdate=registry

@@ -16,3 +16,6 @@ SecurityLabelDisable=true
 GroupAdd=audio
 Environment=XDG_RUNTIME_DIR=/run/pipewire
 Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
+
+# volume
+Environment=VOLUME_CONTROL=pipewire
