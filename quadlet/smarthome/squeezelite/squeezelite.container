@@ -12,7 +12,7 @@ AddDevice=/dev/snd
 
 # pipewire (see LVA docs)
 Volume=/run/pipewire:/run/pipewire:ro
-#Volume=/run/pipewire:/run/user/1000/pulse:ro
+Volume=/run/pipewire/pulse/native:/run/user/1000/pulse:ro
 SecurityLabelDisable=true
 GroupAdd=audio
 Environment=XDG_RUNTIME_DIR=/run/pipewire
