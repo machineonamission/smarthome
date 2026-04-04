@@ -10,7 +10,9 @@ Environment=CONFIG_DIR=/config
 Environment=AUDIO_UID=0
 Environment=AUDIO_GID=0
 
-Image=ghcr.io/trudenboy/sendspin-bt-bridge:latest
+Pod=smarthome.pod
+
+Image=ghcr.io/loryanstrant/sendspin-client:latest
 Label=com.centurylinklabs.watchtower.enable=true
 Network=host
 PodmanArgs=--security-opt apparmor=unconfined
