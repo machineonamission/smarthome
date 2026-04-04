@@ -12,7 +12,7 @@ Environment=AUDIO_GID=0
 
 Pod=smarthome.pod
 
-Image=ghcr.io/loryanstrant/sendspin-client:latest
+Image=ghcr.io/machineonamission/sendspin-cli-docker:main
 Label=com.centurylinklabs.watchtower.enable=true
 Network=host
 PodmanArgs=--security-opt apparmor=unconfined
