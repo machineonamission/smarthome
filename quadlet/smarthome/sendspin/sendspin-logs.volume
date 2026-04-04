@@ -1,0 +1,4 @@
+[Volume]
+Device=/srv/volumes/smarthome/sendspin/logs
+
+Type=bind
