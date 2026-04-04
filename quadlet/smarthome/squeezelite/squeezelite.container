@@ -19,6 +19,8 @@ Environment=XDG_RUNTIME_DIR=/run/pipewire
 Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
 Environment=SQUEEZELITE_MODE=PULSE
 Environment=SQUEEZELITE_NAME=Bedroom
+Environment=PGID=0
+Environment=PUID=0
 
 # volume
 [Service]
