@@ -1,0 +1,25 @@
+[Container]
+ContainerName=squeezelite
+Image=docker.io/giof71/squeezelite
+
+AutoUpdate=registry
+Pull=newer
+
+Pod=smarthome.pod
+
+# usb communication
+AddDevice=/dev/snd
+
+# pipewire (see LVA docs)
+Volume=/run/pipewire:/run/pipewire:ro
+#Volume=/run/pipewire:/run/user/1000/pulse:ro
+SecurityLabelDisable=true
+GroupAdd=audio
+Environment=XDG_RUNTIME_DIR=/run/pipewire
+Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
+Environment=SQUEEZELITE_MODE=PULSE
+Environment=SQUEEZELITE_NAME=Bedroom
+
+# volume
+[Service]
+Restart=always
