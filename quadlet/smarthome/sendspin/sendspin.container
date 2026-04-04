@@ -19,8 +19,8 @@ Image=ghcr.io/chrisuthe/multiroom-audio:latest
 Network=host
 PublishPort=8096:8096
 User=0
-Volume=sendspin-config.volume:/app/config
-Volume=sendspin-logs.volume:/app/logs
+Volume=sendspin-config.volume:/app/config:z
+Volume=sendspin-logs.volume:/app/logs:z
 Volume=/proc/asound:/host/asound:ro
 Volume=/usr/share/alsa:/usr/share/alsa:ro
 
