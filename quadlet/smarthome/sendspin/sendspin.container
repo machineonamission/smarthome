@@ -1,31 +1,30 @@
 [Container]
-AddCapability=SYS_NICE
-ContainerName=sendspin
+AddCapability=NET_ADMIN
+AddCapability=NET_RAW
+AddDevice=/dev/bus/usb:/dev/bus/usb
+ContainerName=sendspin-client
+Environment=SENDSPIN_SERVER=auto
+Environment=TZ=America/Chicago
+Environment=WEB_PORT=8080
+Environment=CONFIG_DIR=/config
+Environment=AUDIO_UID=0
+Environment=AUDIO_GID=0
 
-Pod=smarthome.pod
+Image=ghcr.io/trudenboy/sendspin-bt-bridge:latest
+Label=com.centurylinklabs.watchtower.enable=true
+Network=host
+PodmanArgs=--security-opt apparmor=unconfined
+SeccompProfile=unconfined
+Volume=/var/run/dbus:/var/run/dbus
+#Volume=/run/user/1000/pulse:/run/user/1000/pulse
+#Volume=/run/user/1000/pipewire-0:/run/user/1000/pipewire-0
+Volume=sendspin-config.volume:/config
 
+SecurityLabelDisable=true
+GroupAdd=audio
 Volume=/run/pipewire:/run/pipewire:ro
 Environment=XDG_RUNTIME_DIR=/run/pipewire
 Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
-
-Group=29
-SecurityLabelDisable=true
-GroupAdd=audio
-HealthCmd=["curl","-f","http://localhost:8096/api/health"]
-HealthInterval=30s
-HealthRetries=3
-HealthStartPeriod=40s
-HealthTimeout=10s
-Image=ghcr.io/chrisuthe/multiroom-audio:latest
-Network=host
-PublishPort=8096:8096
-User=0
-Volume=sendspin-config.volume:/app/config:z
-Volume=sendspin-logs.volume:/app/logs:z
-Volume=/proc/asound:/host/asound:ro
-Volume=/usr/share/alsa:/usr/share/alsa:ro
-
-AddDevice=/dev/snd
 
 [Service]
 Restart=always
