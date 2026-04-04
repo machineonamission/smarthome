@@ -2,6 +2,8 @@
 AddCapability=SYS_NICE
 ContainerName=sendspin
 
+Pod=smarthome.pod
+
 Volume=/run/pipewire:/run/pipewire:ro
 Environment=XDG_RUNTIME_DIR=/run/pipewire
 Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
@@ -21,6 +23,8 @@ Volume=sendspin-config.volume:/app/config
 Volume=sendspin-logs.volume:/app/logs
 Volume=/proc/asound:/host/asound:ro
 Volume=/usr/share/alsa:/usr/share/alsa:ro
+
+AddDevice=/dev/snd
 
 [Service]
 Restart=always
