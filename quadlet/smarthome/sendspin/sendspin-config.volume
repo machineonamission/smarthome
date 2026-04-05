@@ -1,4 +1,0 @@
-[Volume]
-Device=/srv/volumes/smarthome/sendspin/config
-
-Type=bind
