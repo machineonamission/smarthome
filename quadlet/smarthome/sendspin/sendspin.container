@@ -31,7 +31,7 @@ Volume=/run/pipewire:/run/pipewire:ro
 Environment=XDG_RUNTIME_DIR=/run/pipewire
 Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
 
-Exec=daemon --audio-device 0 --name "Bedroom Sendspin"
+Exec=daemon --audio-device 0 --name "Bedroom Sendspin" --id sendspin-bedroom
 
 [Service]
 Restart=always
