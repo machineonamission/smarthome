@@ -13,12 +13,15 @@ AutoUpdate=registry
 Pull=newer
 Pod=smarthome.pod
 
+AddDevice=/dev/snd
+
+
 Image=ghcr.io/machineonamission/sendspin-cli-docker:main
 Label=com.centurylinklabs.watchtower.enable=true
 Network=host
 PodmanArgs=--security-opt apparmor=unconfined
 SeccompProfile=unconfined
-Volume=/var/run/dbus:/var/run/dbus
+Volume=/var/run/dbus:/var/run/dbus:ro
 #Volume=/run/user/1000/pulse:/run/user/1000/pulse
 #Volume=/run/user/1000/pipewire-0:/run/user/1000/pipewire-0
 Volume=sendspin-config.volume:/config
@@ -28,6 +31,8 @@ GroupAdd=audio
 Volume=/run/pipewire:/run/pipewire:ro
 Environment=XDG_RUNTIME_DIR=/run/pipewire
 Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
+
+Exec=daemon --audio-device 0
 
 [Service]
 Restart=always
