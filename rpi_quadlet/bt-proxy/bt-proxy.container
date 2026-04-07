@@ -1,14 +1,12 @@
 [Container]
 ContainerName=theengs
-Image=docker.io/theengs/gateway:latest
+Image=ghcr.io/machineonamission/bt-proxy-docker:main
 PodmanArgs=--privileged
 Volume=/run/dbus:/run/dbus:ro
 Volume=/var/run/dbus:/var/run/dbus:ro
 AutoUpdate=registry
 Pull=newer
 Environment=DBUS_SYSTEM_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket
-Environment=MQTT_HOST=192.168.0.2
-#Environment=ENABLE_WEBSOCKET=true
 
 Pod=smarthome.pod
 
