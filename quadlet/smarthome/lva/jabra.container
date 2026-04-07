@@ -19,5 +19,10 @@ Environment=PULSE_SERVER=unix:/run/pipewire/pulse/native
 
 # volume
 Environment=VOLUME_CONTROL=pipewire
+
 [Service]
 Restart=always
+
+[Unit]
+After=linux-voice-assistant.container
+Wants=linux-voice-assistant.container
