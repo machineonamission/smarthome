@@ -8,9 +8,7 @@ ContainerName=gork
 Image=ghcr.io/machineonamission/gorkpy:main
 AutoUpdate=registry
 Pull=newer
-Volume=/srv/volumes/bot/gork/discordkey.txt:/app/discordkey.txt:z
-Volume=/srv/volumes/bot/gork/geminikey.txt:/app/geminikey.txt:z
-Volume=/srv/volumes/bot/gork/exclusions.json:/app/exclusions.json:z
+Volume=/srv/volumes/bot/gork:/app/persist:z
 
 [Service]
 Restart=always
