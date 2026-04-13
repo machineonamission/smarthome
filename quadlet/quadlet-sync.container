@@ -3,7 +3,8 @@ ContainerName=quadlet-sync
 # Tell Podman to build the image from the directory we just made
 Image=ghcr.io/machineonamission/quadlet-sync:main
 PodmanArgs=--privileged
-
+AutoUpdate=registry
+Pull=newer
 
 # Map the host systemd folder to /host-systemd inside the container
 Volume=/etc/containers/systemd:/host-systemd:rw

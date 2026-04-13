@@ -2,7 +2,8 @@
 ContainerName=webdav
 Image=ghcr.io/hacdias/webdav:latest
 PublishPort=6065:6065
-
+AutoUpdate=registry
+Pull=newer
 Volume=/srv/volumes/webdav:/data:z
 Volume=/srv/quadlet/quadlet/webdav/config.yml:/config.yml:z
 Exec=-c /config.yml
