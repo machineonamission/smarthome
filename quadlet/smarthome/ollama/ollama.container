@@ -12,7 +12,7 @@ Pull=newer
 Volume=ollama-data.volume:/root/.ollama:z
 AddDevice=nvidia.com/gpu=all
 Environment=OLLAMA_DEBUG=2
-#Environment=OLLAMA_FLASH_ATTENTION=1
+Environment=OLLAMA_FLASH_ATTENTION=1
 #Environment=OLLAMA_KV_CACHE_TYPE=q4_0
 #Environment=OLLAMA_CONTEXT_LENGTH=8000
 #Environment=OLLAMA_VULKAN=1
