@@ -2,6 +2,8 @@
 After=network-online.target
 
 [Container]
+ContainerName=cloudflared
+
 Image=docker.io/cloudflare/cloudflared:latest
 # Cloudflare handles its own routing, but we force off autoupdate
 # because immutable containers shouldn't rewrite their own binaries.

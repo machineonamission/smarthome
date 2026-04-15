@@ -1,0 +1,15 @@
+[Container]
+ContainerName=fast_reverse_proxy_server
+Image=docker.io/fatedier/frps:latest
+Network=host
+AutoUpdate=registry
+Pull=newer
+EnvironmentFile=frp.env
+Volume=frpc.toml:/etc/frp/frpc.toml:ro
+
+[Service]
+# Tell systemd to always restart the tunnel if it crashes or loses connection
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
