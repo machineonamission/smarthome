@@ -2,7 +2,7 @@
 Pod=net.pod
 
 ContainerName=fast_reverse_proxy_client
-Image=docker.io/fatedier/frps:latest
+Image=docker.io/fatedier/frps
 Network=host
 AutoUpdate=registry
 Pull=newer
