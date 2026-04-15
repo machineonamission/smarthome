@@ -5,7 +5,9 @@ Network=host
 AutoUpdate=registry
 Pull=newer
 EnvironmentFile=frp.env
-Volume=frpc.toml:/etc/frp/frpc.toml:ro
+Volume=./frps.toml:/etc/frp/frps.toml:ro
+Exec=-c /etc/frp/frps.toml
+
 
 [Service]
 # Tell systemd to always restart the tunnel if it crashes or loses connection

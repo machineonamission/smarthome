@@ -8,7 +8,8 @@ AutoUpdate=registry
 Pull=newer
 
 EnvironmentFile=frp.env
-Volume=frpc.toml:/etc/frp/frpc.toml:ro
+Volume=./frpc.toml:/etc/frp/frpc.toml:ro
+Exec=-c /etc/frp/frpc.toml
 
 
 [Service]
