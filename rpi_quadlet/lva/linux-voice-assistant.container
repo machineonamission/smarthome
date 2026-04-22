@@ -5,7 +5,7 @@ Description=Linux Voice Assistant
 Pod=smarthome.pod
 ContainerName=linux-voice-assistant
 Image=ghcr.io/machineonamission/linux-voice-assistant:merge-all-wip
-Environment=ws://192.168.0.2:8927/sendspin
+Environment=SENDSPIN_URL=ws://192.168.0.2:8927/sendspin
 Environment=VOLUME_CONTROLLER=pipewire
 #Image=ghcr.io/machineonamission/linux-voice-assistant:leds-and-buttons-events
 AutoUpdate=registry
