@@ -5,7 +5,7 @@ Description=Linux Voice Assistant
 Pod=smarthome.pod
 ContainerName=linux-voice-assistant
 #Image=ghcr.io/machineonamission/linux-voice-assistant:led-pipewire-wakelisten
-Image=ghcr.io/machineonamission/linux-voice-assistant:pw-volume-docker
+Image=ghcr.io/machineonamission/linux-voice-assistant:led-pipewire-wakelisten-2
 Environment=VOLUME_CONTROLLER=pipewire
 Environment=SENDSPIN_URL=ws://192.168.0.2:8927/sendspin
 #Image=ghcr.io/machineonamission/linux-voice-assistant:leds-and-buttons-events
