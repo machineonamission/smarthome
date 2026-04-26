@@ -1,0 +1,11 @@
+[Container]
+ContainerName=minecraft
+Image=docker.io/itzg/minecraft-server
+PublishPort=25565:25565
+Volume=minecraft.volume:/data
+
+Environment=EULA=TRUE
+Environment=MODPACK_PLATFORM=AUTO_CURSEFORGE
+# official curseforge api key LMAO
+Environment=CF_API_KEY=$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm
+Environment=CF_PAGE_URL=https://legacy.curseforge.com/minecraft/modpacks/hosmp-26
