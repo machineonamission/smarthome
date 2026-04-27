@@ -15,7 +15,7 @@ Pull=newer
 Network=host
 Environment=MOTD="HOSMP '26"
 Environment=OPS=melody_florum
-Environment=ICON=http://..../some/image.png
+Environment=ICON=https://raw.githubusercontent.com/machineonamission/quadlet/refs/heads/main/quadlet/minecraft/hoslogo.png
 
 [Service]
 Restart=always
