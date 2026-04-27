@@ -19,11 +19,15 @@ AddDevice=/dev/snd
 Image=ghcr.io/machineonamission/sendspin-cli-docker:main
 Label=com.centurylinklabs.watchtower.enable=true
 Network=host
-PodmanArgs=--security-opt apparmor=unconfined
+PodmanArgs=--security-opt apparmor=unconfined --privileged
 SeccompProfile=unconfined
 Volume=/var/run/dbus:/var/run/dbus:ro
 #Volume=/run/user/1000/pulse:/run/user/1000/pulse
 #Volume=/run/user/1000/pipewire-0:/run/user/1000/pipewire-0
+
+Volume=/run/dbus:/run/dbus:ro
+Volume=/var/run/dbus:/var/run/dbus:ro
+Environment=DBUS_SYSTEM_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket
 
 SecurityLabelDisable=true
 GroupAdd=audio
