@@ -2,7 +2,7 @@
 AddCapability=SYS_ADMIN DAC_READ_SEARCH
 ContainerName=music-assistant-server
 Environment=LOG_LEVEL=debug
-Image=ghcr.io/music-assistant/server:latest
+Image=ghcr.io/music-assistant/server:beta
 PodmanArgs=--security-opt apparmor=unconfined
 Volume=music-assistant-data.volume:/data:z
 Volume=music-assistant-media.volume:/media:z
